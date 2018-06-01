@@ -5,12 +5,12 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="60dp"
         android:layout_marginLeft="45dp">
 
         <ImageView
@@ -27,8 +27,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginLeft="10dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -49,8 +48,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginLeft="10dp"/>
     </RelativeLayout>
 
     <RelativeLayout
