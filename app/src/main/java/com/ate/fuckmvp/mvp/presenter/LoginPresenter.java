@@ -30,6 +30,16 @@ public class LoginPresenter {
         interactorImpl = new LoginInteractorImpl();
     }
 
+    /**
+     * 每次调用view层的方法时 判断view的引用是否为空
+     * @return
+     */
+    public boolean isViewAttached(){
+        return loginView != null;
+    }
+
+
+    //在Activity被销毁时 解除presenter对activity的引用 防止报空指针异常
     public void detachView(){
         loginView = null;
     }
@@ -42,16 +52,23 @@ public class LoginPresenter {
     public void validate(String phone,String password){
         this.phone = phone;
         this.password = password;
+        //得到账号信息验证的结果
         result = interactorImpl.validateInfo(phone,password);
-        loginView.showLoading();
+        if (isViewAttached()){
+            loginView.showLoading();
+        }
         switch (result){
             case LoginInteractorImpl.PHONE_NULL:
-                loginView.hideLoading();
-                loginView.showToast(LoginInteractorImpl.PHONE_NULL);
+                if (isViewAttached()){
+                    loginView.hideLoading();
+                    loginView.showToast(LoginInteractorImpl.PHONE_NULL);
+                }
                 break;
             case LoginInteractorImpl.PASSWORD_NULL:
-                loginView.hideLoading();
-                loginView.showToast(LoginInteractorImpl.PASSWORD_NULL);
+                if (isViewAttached()){
+                    loginView.hideLoading();
+                    loginView.showToast(LoginInteractorImpl.PASSWORD_NULL);
+                }
                 break;
             case LoginInteractorImpl.NOT_NULL:
                 login();
@@ -66,17 +83,18 @@ public class LoginPresenter {
         interactorImpl.login(phone, password, new LoginInteractor.OnLoginFinishedListener() {
             @Override
             public void onSuccess() {
-//                Log.d(TAG, "onSuccess: "+"test");
-                loginView.hideLoading();
-                loginView.showToast("登录成功");
+                if (isViewAttached()){
+                    loginView.hideLoading();
+                    loginView.showToast("登录成功");
+                }
             }
 
             @Override
             public void onFailed() {
-//                Log.d(TAG, "onSuccess: "+"test");
-                loginView.hideLoading();
-//                loginView.showErrorMessage("登录失败 手机号或者密码不对");
-                loginView.showToast("登录失败 手机号或者密码不对");
+                if (isViewAttached()){
+                    loginView.hideLoading();
+                    loginView.showToast("登录失败 手机号或者密码不对");
+                }
             }
         });
     }
