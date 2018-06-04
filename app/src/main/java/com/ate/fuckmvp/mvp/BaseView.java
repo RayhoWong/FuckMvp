@@ -1,12 +1,22 @@
-package com.ate.fuckmvp.mvp.view;
-// Created by Rayho on 2018/6/1.
+package com.ate.fuckmvp.mvp;
+// Created by Rayho on 2018/6/4.
 
 /**
  * author: Rayho
- * date:   On 2018/6/1
- * view层:
+ * date:   On 2018/6/4
+ * 提供一些公用的ui效果
  */
-public interface LoginView {
+public interface BaseView {
+    /**
+     * 隐藏view
+     */
+    void hideView();
+
+    /**
+     * 显示view
+     */
+    void showView();
+
     /**
      * 显示进度
      */
@@ -30,7 +40,7 @@ public interface LoginView {
     void showErrorMessage(String msg);
 
     /**
-     * 登录成功跳转主界面
+     * 跳转activity
      */
-    void toMainActivity();
+    void toActivity();
 }

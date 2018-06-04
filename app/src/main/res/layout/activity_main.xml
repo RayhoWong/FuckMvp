@@ -1,79 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/bt_send"
+        android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="45dp">
-
-        <ImageView
-            android:id="@+id/iv1"
-            android:src="@mipmap/account"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_centerVertical="true" />
-
-        <EditText
-            android:id="@+id/et_phone"
-            android:layout_toRightOf="@id/iv1"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:layout_marginLeft="10dp" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="45dp">
-        <ImageView
-            android:id="@+id/iv2"
-            android:src="@mipmap/pwd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_centerVertical="true" />
-
-        <EditText
-            android:id="@+id/et_pwd"
-            android:layout_toRightOf="@id/iv2"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:layout_marginLeft="10dp"/>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp">
-
-        <Button
-            android:id="@+id/bt_login"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:background="@color/colorPrimary"
-            android:clickable="true"
-            android:layout_centerHorizontal="true"
-            android:text="登录"
-            android:textSize="15sp"
-            android:textColor="#ffffff" />
-
-        <ProgressBar
-            android:id="@+id/pb"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:visibility="invisible"
-            android:layout_below="@id/bt_login"
-            android:layout_centerHorizontal="true"/>
-    </RelativeLayout>
-
-</LinearLayout>
+        android:layout_centerInParent="true"
+        android:background="@color/colorPrimary"
+        android:clickable="true"
+        android:text="发送"
+        android:textSize="15sp"
+        android:textColor="#ffffff" />
+</RelativeLayout>
