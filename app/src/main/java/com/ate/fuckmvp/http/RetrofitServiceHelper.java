@@ -1,6 +1,6 @@
 package com.ate.fuckmvp.http;
 
-import com.ate.retrofitpackage.base.BaseApp;
+import com.ate.fuckmvp.base.BaseApp;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.io.File;
