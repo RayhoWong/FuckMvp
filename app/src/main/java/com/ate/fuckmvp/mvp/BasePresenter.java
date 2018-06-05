@@ -12,18 +12,22 @@ public class BasePresenter <V extends BaseView> {
     //继承BaseView子类的对象
     private V mView;
 
+    //绑定activity
     public void attachView(V mView){
         this.mView = mView;
     }
 
+    //取消绑定
     public void detachView(){
         this.mView = null;
     }
 
+    //判断activity的引用是否为空
     public boolean isViewAttached(){
         return mView != null;
     }
 
+    //返回activity引用
     public V getView(){
         return mView;
     }

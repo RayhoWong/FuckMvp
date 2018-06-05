@@ -31,6 +31,7 @@ public class MainPresenter extends BasePresenter<MainView>{
                 if(data != null){
                     if(isViewAttached()){
                         getView().hideLoading();
+                        getView().showSnackbar(data.title);
                     }
                 }else {
                     if (isViewAttached()){
@@ -55,8 +56,6 @@ public class MainPresenter extends BasePresenter<MainView>{
             public void onComplete() {}
         });
     }
-
-
 
 
 

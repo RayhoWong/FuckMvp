@@ -56,10 +56,10 @@ public class RetrofitServiceHelper {
 //        }).setLevel(HttpLoggingInterceptor.Level.BODY));
 
         //设置缓存路径
-        File cacheFile = new File(BaseApp.getContext().getCacheDir(), "caheData.txt");
+      /*  File cacheFile = new File(BaseApp.getContext().getCacheDir(), "caheData.txt");
         //设置缓存大小
         int cacheSize = 10*1024*1024;
-        Cache cache = new Cache(cacheFile, cacheSize);
+        Cache cache = new Cache(cacheFile, cacheSize);*/
 
         //添加缓存拦截器
 /*        builder.addInterceptor(new CacheIntercepter());

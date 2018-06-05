@@ -11,5 +11,5 @@ import com.ate.fuckmvp.mvp.BaseView;
  * 主界面点击按钮请求数据成功后显示一个Snackbar
  */
 public interface MainView extends BaseView {
-    void showSnackbar(View view,String content);
+    void showSnackbar(String content);
 }

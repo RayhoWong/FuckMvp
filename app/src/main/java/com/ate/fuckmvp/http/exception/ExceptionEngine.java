@@ -1,5 +1,7 @@
 package com.ate.fuckmvp.http.exception;
 
+import com.ate.fuckmvp.base.BaseApp;
+import com.ate.fuckmvp.utils.NetworkUtils;
 import com.google.gson.JsonParseException;
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
 
@@ -63,9 +65,13 @@ public class ExceptionEngine {
             ex = new ApiException(e, ERROR.SSL_ERROR);
             ex.setDisplayMessage("证书验证失败");
             return ex;
-        }else {
+        }else if(!NetworkUtils.isAvailable(BaseApp.getContext())){
+            ex = new ApiException(e, ERROR.HTTP_ERROR);
+            ex.setDisplayMessage("网络未连接");//
+            return ex;
+        } else {
             ex = new ApiException(e, ERROR.UNKNOWN);
-            ex.setDisplayMessage("网络错误");//未知错误
+            ex.setDisplayMessage("网络错误");//将所有的未知的错误归于网络错误
             return ex;
         }
     }
