@@ -1,29 +1,23 @@
 package com.ate.fuckmvp.activity;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.ate.fuckmvp.R;
-import com.ate.fuckmvp.base.BaseApp;
 import com.ate.fuckmvp.mvp.presenter.LoginPresenter;
 import com.ate.fuckmvp.mvp.view.LoginView;
-import com.ate.fuckmvp.utils.NetworkUtils;
 
 /**
  * View的实现类 只负责ui的显示
  */
 public class LoginActivity extends AppCompatActivity implements LoginView, View.OnClickListener {
 
-    private static final String TAG = "rx";
     private EditText mPhone;
 
     private EditText mPassword;

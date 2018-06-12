@@ -24,11 +24,10 @@ import okhttp3.ResponseBody;
  * rxjava的工具类
  */
 public class RxUtil {
-    private static Gson GSON = new GsonBuilder().serializeNulls().create();
 
+    private static Gson GSON = new GsonBuilder().serializeNulls().create();
     /**
      * 统一线程处理
-     *
      * @param <T>
      * @return
      */
@@ -44,7 +43,6 @@ public class RxUtil {
 
     /**
      * 获取需要的数据实体类
-     *
      * @param <T>
      * @return
      */

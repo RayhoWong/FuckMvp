@@ -1,7 +1,5 @@
 package com.ate.fuckmvp.http;
 
-
-
 import com.ate.fuckmvp.bean.MovieDetail;
 
 import io.reactivex.Observable;
@@ -20,11 +18,6 @@ public class RetrofitLoader{
     public static RetrofitLoader getInstance(){
         return SingleHolder.loader;
     }
-
-//    private <T> Observable<T> observable(Observable<T> observable){
-//        return observable.subscribeOn(Schedulers.io())
-//                         .observeOn(AndroidSchedulers.mainThread());
-//    }
 
     /**
      * 获取某部电影的详细信息

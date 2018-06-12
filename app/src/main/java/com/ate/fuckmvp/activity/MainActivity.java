@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
 
         mDialog = new ProgressDialog(this);
         mDialog.setCancelable(false);
-        mDialog.setTitle("正在加载...");
+        mDialog.setMessage("正在加载...");
 
         mainPresenter = new MainPresenter();
         mainPresenter.attachView(this);
