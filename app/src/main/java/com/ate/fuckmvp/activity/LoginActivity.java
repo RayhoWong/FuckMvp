@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,7 @@ import com.ate.fuckmvp.mvp.view.LoginView;
  */
 public class LoginActivity extends AppCompatActivity implements LoginView, View.OnClickListener {
 
+    private static final String TAG = "test";
     private EditText mPhone;
 
     private EditText mPassword;
@@ -48,6 +50,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
         mLogin.setOnClickListener(this);
 
         presenter = new LoginPresenter(this);
+
+        Log.d(TAG, "onCreate: "+"test");
     }
 
     @Override
