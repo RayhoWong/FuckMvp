@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
 
         presenter = new LoginPresenter(this);
 
-        Log.d(TAG, "onCreate: "+"test");
+        Log.d(TAG, "onCreate: "+"test损失的发生");
     }
 
     @Override
